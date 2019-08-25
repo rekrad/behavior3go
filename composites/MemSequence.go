@@ -5,6 +5,16 @@ import (
 	. "github.com/rekrad/behavior3go/core"
 )
 
+/**
+ * MemSequence is similar to Sequence node, but when a child returns a
+ * `RUNNING` state, its index is recorded and in the next tick the
+ * MemPriority call the child recorded directly, without calling previous
+ * children again.
+ *
+ * @module b3
+ * @class MemSequence
+ * @extends Composite
+ **/
 type MemSequence struct {
 	Composite
 }

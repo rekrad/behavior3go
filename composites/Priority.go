@@ -5,6 +5,15 @@ import (
 	. "github.com/rekrad/behavior3go/core"
 )
 
+/**
+ * Priority ticks its children sequentially until one of them returns
+ * `SUCCESS`, `RUNNING` or `ERROR`. If all children return the failure state,
+ * the priority also returns `FAILURE`.
+ *
+ * @module b3
+ * @class Priority
+ * @extends Composite
+ **/
 type Priority struct {
 	Composite
 }

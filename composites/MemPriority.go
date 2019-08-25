@@ -5,6 +5,16 @@ import (
 	. "github.com/rekrad/behavior3go/core"
 )
 
+/**
+ * MemPriority is similar to Priority node, but when a child returns a
+ * `RUNNING` state, its index is recorded and in the next tick the,
+ * MemPriority calls the child recorded directly, without calling previous
+ * children again.
+ *
+ * @module b3
+ * @class MemPriority
+ * @extends Composite
+ **/
 type MemPriority struct {
 	Composite
 }

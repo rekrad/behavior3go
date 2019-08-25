@@ -1,0 +1,295 @@
+{
+  "name": "test_ai",
+  "description": "",
+  "data": {
+    "version": "0.3.0",
+    "scope": "project",
+    "selectedTree": "99880cd3-c226-4dd5-84af-fa7792ce3326",
+    "trees": [
+      {
+        "version": "0.3.0",
+        "scope": "tree",
+        "id": "99880cd3-c226-4dd5-84af-fa7792ce3326",
+        "title": "HostileNPC",
+        "description": "",
+        "root": "d8dc3ac8-9dc4-452e-8ce8-2505cb01fd38",
+        "properties": {},
+        "nodes": {
+          "d8dc3ac8-9dc4-452e-8ce8-2505cb01fd38": {
+            "id": "d8dc3ac8-9dc4-452e-8ce8-2505cb01fd38",
+            "name": "MemPriority",
+            "category": "composite",
+            "title": "MemPriority",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": -228,
+              "y": 24
+            },
+            "children": [
+              "74794c92-58e1-4292-8e02-52b8013dc001",
+              "d90a53c3-18c8-4b0c-9f75-70689ed2e8c6",
+              "9c0fa515-5f3f-48d3-bba8-2f6574816acc",
+              "e5466a4f-a1a1-477a-993b-3dae732ecb26"
+            ]
+          },
+          "d90a53c3-18c8-4b0c-9f75-70689ed2e8c6": {
+            "id": "d90a53c3-18c8-4b0c-9f75-70689ed2e8c6",
+            "name": "MemSequence",
+            "category": "composite",
+            "title": "MemSequence",
+            "description": "Chasing",
+            "properties": {},
+            "display": {
+              "x": -72,
+              "y": 24
+            },
+            "children": [
+              "425b1ac6-fe2c-483e-bad7-fb3c6dcd521c",
+              "564a7c50-4f6c-4fab-8ade-a3fa7fb43af4"
+            ]
+          },
+          "9c0fa515-5f3f-48d3-bba8-2f6574816acc": {
+            "id": "9c0fa515-5f3f-48d3-bba8-2f6574816acc",
+            "name": "MemSequence",
+            "category": "composite",
+            "title": "MemSequence",
+            "description": "Attack",
+            "properties": {},
+            "display": {
+              "x": -72,
+              "y": 180
+            },
+            "children": [
+              "45da5939-b63c-4fee-a972-c0bcf4fd6452",
+              "7e85fd69-9d01-4768-884b-e92c92f04cfc"
+            ]
+          },
+          "425b1ac6-fe2c-483e-bad7-fb3c6dcd521c": {
+            "id": "425b1ac6-fe2c-483e-bad7-fb3c6dcd521c",
+            "name": "GreaterThan",
+            "category": "action",
+            "title": "GreaterThan",
+            "description": "",
+            "properties": {
+              "LeftOp": "NearestHostileDistance",
+              "RightOp": "RemoteAttackDistance"
+            },
+            "display": {
+              "x": 144,
+              "y": 12
+            }
+          },
+          "564a7c50-4f6c-4fab-8ade-a3fa7fb43af4": {
+            "id": "564a7c50-4f6c-4fab-8ade-a3fa7fb43af4",
+            "name": "Chase",
+            "category": "action",
+            "title": "Chase",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 144,
+              "y": 72
+            }
+          },
+          "74794c92-58e1-4292-8e02-52b8013dc001": {
+            "id": "74794c92-58e1-4292-8e02-52b8013dc001",
+            "name": "MemSequence",
+            "category": "composite",
+            "title": "MemSequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": -72,
+              "y": -96
+            },
+            "children": [
+              "ed9d8248-57ee-4718-87ff-7db874df7933",
+              "750041fe-b1bf-40ae-8b6f-3eaa78e9548d"
+            ]
+          },
+          "ed9d8248-57ee-4718-87ff-7db874df7933": {
+            "id": "ed9d8248-57ee-4718-87ff-7db874df7933",
+            "name": "GreaterThan",
+            "category": "action",
+            "title": "GreaterThan",
+            "description": "",
+            "properties": {
+              "LeftOp": "NearestHostileDistance",
+              "RightOp": "Chase"
+            },
+            "display": {
+              "x": 144,
+              "y": -132
+            }
+          },
+          "750041fe-b1bf-40ae-8b6f-3eaa78e9548d": {
+            "id": "750041fe-b1bf-40ae-8b6f-3eaa78e9548d",
+            "name": "Alert",
+            "category": "action",
+            "title": "Alert",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 144,
+              "y": -60
+            }
+          },
+          "1d84d397-8f18-42b1-8e9b-a96f4dc6ae95": {
+            "id": "1d84d397-8f18-42b1-8e9b-a96f4dc6ae95",
+            "name": "Melee",
+            "category": "action",
+            "title": "Melee",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 84,
+              "y": 384
+            }
+          },
+          "e5466a4f-a1a1-477a-993b-3dae732ecb26": {
+            "id": "e5466a4f-a1a1-477a-993b-3dae732ecb26",
+            "name": "MemSequence",
+            "category": "composite",
+            "title": "MemSequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": -72,
+              "y": 348
+            },
+            "children": [
+              "1d84d397-8f18-42b1-8e9b-a96f4dc6ae95"
+            ]
+          },
+          "45da5939-b63c-4fee-a972-c0bcf4fd6452": {
+            "id": "45da5939-b63c-4fee-a972-c0bcf4fd6452",
+            "name": "GreaterThan",
+            "category": "action",
+            "title": "GreaterThan",
+            "description": "",
+            "properties": {
+              "LeftOp": "NearestHostileDistance",
+              "RightOp": "MeleeDistance"
+            },
+            "display": {
+              "x": 120,
+              "y": 168
+            }
+          },
+          "7e85fd69-9d01-4768-884b-e92c92f04cfc": {
+            "id": "7e85fd69-9d01-4768-884b-e92c92f04cfc",
+            "name": "RemoteAttack",
+            "category": "action",
+            "title": "RemoteAttack",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 120,
+              "y": 252
+            }
+          }
+        },
+        "display": {
+          "camera_x": 763.1850000023842,
+          "camera_y": 422.919999986887,
+          "camera_z": 1,
+          "x": -360,
+          "y": 24
+        }
+      },
+      {
+        "version": "0.3.0",
+        "scope": "tree",
+        "id": "08c1e290-906e-41ca-bc36-0777996c75f5",
+        "title": "FriendlyNpc",
+        "description": "",
+        "root": null,
+        "properties": {},
+        "nodes": {},
+        "display": {
+          "camera_x": 817,
+          "camera_y": 547,
+          "camera_z": 1,
+          "x": -240,
+          "y": -48
+        }
+      }
+    ],
+    "custom_nodes": [
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "Log",
+        "category": "action",
+        "title": "Log",
+        "description": "Log",
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "Patrol",
+        "category": "action",
+        "title": "Patrol",
+        "description": "",
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "GreaterThan",
+        "category": "action",
+        "title": "GreaterThan",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "Chase",
+        "category": "action",
+        "title": "Chase",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "Alert",
+        "category": "action",
+        "title": "Alert",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "Melee",
+        "category": "action",
+        "title": "Melee",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "RemoteAttack",
+        "category": "action",
+        "title": "RemoteAttack",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "Runaway",
+        "category": "action",
+        "title": "Runaway",
+        "description": null,
+        "properties": {}
+      }
+    ]
+  },
+  "path": "E:\\GoHome\\src\\github.com\\rekrad\\behavior3go\\examples\\test_ai\\test_ai.b3"
+}
