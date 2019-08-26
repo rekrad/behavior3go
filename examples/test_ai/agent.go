@@ -12,11 +12,23 @@ type IAgent interface {
 	RemoteAttack()
 	Melee()
 	Runaway()
+	// 获取最近的敌人的距离
+	GetNearestHostileDistance() int
+	// 获取警觉距离
+	GetAlertRange() int
+	// 获取视野距离
+	GetSeeFieldRange() int
+	// 获取远程攻击距离
+	GetRemoteAttackRange() int
+	// 获取近战攻击距离
+	GetMeleeAttackRange() int
 }
 
 type agent struct {
 	bTree *BehaviorTree
 	blackboard *Blackboard
+
+	nearestHostileDistance int
 }
 
 func (this *agent) Tick() {
@@ -45,4 +57,29 @@ func (this *agent) Melee() {
 
 func (this *agent) Runaway() {
 	log.Println("Runaway")
+}
+
+// 获取最近的敌人的距离
+func (this *agent) GetNearestHostileDistance() int {
+	return this.nearestHostileDistance
+}
+
+// 获取警觉距离
+func (this *agent) GetAlertRange() int {
+	return 100
+}
+
+// 获取视野距离
+func (this *agent) GetSeeFieldRange() int {
+	return 70
+}
+
+// 获取远程攻击距离
+func (this *agent) GetRemoteAttackRange() int {
+	return 30
+}
+
+// 获取近战攻击距离
+func (this *agent) GetMeleeAttackRange() int {
+	return 8
 }

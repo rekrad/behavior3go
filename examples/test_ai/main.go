@@ -9,69 +9,25 @@ import (
 	. "github.com/rekrad/behavior3go/loader"
 )
 
-// 自定义action节点
-type TestRunner struct {
-	Action
-	info string
-	info2 int
-	info3 string
-	info4 int
-}
-
-func (this *TestRunner) Initialize(setting *BTNodeCfg) {
-	this.Action.Initialize(setting)
-	this.info = setting.GetPropertyAsString("prob1")
-	this.info2 = setting.GetPropertyAsInt("prob2")
-}
-
-func (this *TestRunner) OnTick(tick *Tick) b3.Status {
-	fmt.Printf("TestRunner.OnTick: prob1: %v prob2 %v p1: %v p2: %v\n", this.info, this.info2, this.info3, this.info4)
-	return b3.SUCCESS
-}
-
-
 // 根据行为树名称创建一个agent
 func CreateNpcAgent(btName string, projectConfig *RawProjectCfg) *agent {
 	agent := &agent{ blackboard: NewBlackboard()}
-	maps := b3.NewRegisterStructMaps()
-
+	agent.nearestHostileDistance = 115
 	
-	// CreateAgentAction("Patrol", agent, maps)
-	// CreateAgentAction("Alert", agent, maps)
-	// CreateAgentAction("Chase", agent, maps)
-	// CreateAgentAction("RemoteAttack", agent, maps)
-	// CreateAgentAction("Melee", agent, maps)
-	// CreateAgentAction("Runaway", agent, maps)
-	// CreateAgentAction("GreaterThan", agent, maps)
-
-	// 初始化并注册自定义节点
-	patrol := &patrol{}
-	patrol.Init(agent)
-	maps.Register("Patrol", patrol)
-
-	alert := &alert{}
-	alert.Init(agent)
-	maps.Register("Alert", alert)
-
-	chase := &chase{}
-	chase.Init(agent)
-	maps.Register("Chase", chase)
-
-	remoteAttack := &remoteAttack{}
-	remoteAttack.Init(agent)
-	maps.Register("RemoteAttack", remoteAttack)
-
-	melee := &melee{}
-	melee.Init(agent)
-	maps.Register("Melee", melee)
-
-	runaway := &runaway{}
-	runaway.Init(agent)
-	maps.Register("Runaway", runaway)
-
-	greaterThan := &greaterThan{}
-	greaterThan.Init(agent)
-	maps.Register("GreaterThan", greaterThan)
+	// 注册自定义节点类型 
+	maps := b3.NewRegisterStructMaps()
+	maps.Register("Patrol", &patrol{})
+	maps.Register("Alert", &alert{})
+	maps.Register("Chase", &chase{})
+	maps.Register("RemoteAttack", &remoteAttack{})
+	maps.Register("Melee", &melee{})
+	maps.Register("Runaway", &runaway{})
+	maps.Register("GreaterThan", &greaterThan{})
+	maps.Register("HostileNotNearby", &HostileNotNearby{})
+	maps.Register("HostileAlert", &HostileAlert{})
+	maps.Register("HostileCanBeSeen", &HostileCanBeSeen{})
+	maps.Register("HostileInRemoteAttackRange", &HostileInRemoteAttackRange{})
+	maps.Register("HostileInMeleeRange", &HostileInMeleeRange{})
 
 	// 根据树名加载行为树
 	var bTree *BehaviorTree
@@ -89,7 +45,6 @@ func CreateNpcAgent(btName string, projectConfig *RawProjectCfg) *agent {
 	return agent
 }
 
-
 func main() {
 	projectConfig, ok := LoadRawProjectCfg("test_ai.b3")
 	if !ok {
@@ -98,29 +53,13 @@ func main() {
 	}
 
 	agent := CreateNpcAgent("HostileNPC", projectConfig)
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 30; i++ {
 		agent.Tick()
+		if agent.nearestHostileDistance > 0 {
+			agent.nearestHostileDistance -= 5
+			if agent.nearestHostileDistance < 0 {
+				agent.nearestHostileDistance = 0
+			}
+		}
 	}
-
-	// //自定义节点注册
-	// maps := b3.NewRegisterStructMaps()
-	// maps.Register("Log", new(LogTest))
-	// maps.Register("TestRunner", new(TestRunner))
-
-	// var firstTree *BehaviorTree
-	// //载入
-	// for _, v := range projectConfig.Data.Trees {
-	// 	tree := CreateBevTreeFromConfig(&v, maps)
-	// 	tree.Print()
-	// 	if firstTree == nil {
-	// 		firstTree = tree
-	// 	}
-	// }
-
-	// //输入板
-	// board := NewBlackboard()
-	// //循环每一帧
-	// for i := 0; i < 5; i++ {
-	// 	firstTree.Tick(i, board)
-	// }
 }
