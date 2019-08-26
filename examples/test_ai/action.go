@@ -221,3 +221,16 @@ func (this *HostileInMeleeRange) OnTick(tick *Tick) b3.Status {
 
 	return b3.FAILURE
 }
+
+// 滴血量
+type LowHp struct {
+	AgentAction
+}
+
+func  (this *LowHp) OnTick(tick *Tick) b3.Status {
+	this.AgentAction.OnTick(tick)
+	if this.Agent.IsLowHp() {
+		return b3.SUCCESS
+	}
+	return b3.FAILURE
+}

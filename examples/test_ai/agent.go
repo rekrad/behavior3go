@@ -22,13 +22,18 @@ type IAgent interface {
 	GetRemoteAttackRange() int
 	// 获取近战攻击距离
 	GetMeleeAttackRange() int
+	// 是否低血量
+	IsLowHp() bool
 }
 
 type agent struct {
 	bTree *BehaviorTree
 	blackboard *Blackboard
 
+	// 最近敌人的距离
 	nearestHostileDistance int
+	// 血量
+	hp int
 }
 
 func (this *agent) Tick() {
@@ -82,4 +87,9 @@ func (this *agent) GetRemoteAttackRange() int {
 // 获取近战攻击距离
 func (this *agent) GetMeleeAttackRange() int {
 	return 8
+}
+
+// 是否低血量
+func (this *agent) IsLowHp() bool {
+	return this.hp < 10
 }
