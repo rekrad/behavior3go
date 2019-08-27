@@ -7,7 +7,7 @@ import (
 	. "github.com/rekrad/behavior3go/core"
 	// . "github.com/rekrad/behavior3go/examples/share"
 	. "github.com/rekrad/behavior3go/loader"
-	"log"
+	_ "log"
 )
 
 // 根据行为树名称创建一个agent
@@ -31,6 +31,12 @@ func CreateNpcAgent(btName string, projectConfig *RawProjectCfg) *agent {
 	maps.Register("HostileInRemoteAttackRange", &HostileInRemoteAttackRange{})
 	maps.Register("HostileInMeleeRange", &HostileInMeleeRange{})
 	maps.Register("LowHp", &LowHp{})
+	maps.Register("DebugLog", &DebugLog{})
+	maps.Register("MeleeAttack1", &MeleeAttack1{})
+	maps.Register("MeleeAttack2", &MeleeAttack2{})
+	maps.Register("MeleeAttack3", &MeleeAttack3{})
+	maps.Register("TestRunner1", &TestRunner1{})
+	maps.Register("TestRunner2", &TestRunner2{})
 
 	// 根据树名加载行为树
 	var bTree *BehaviorTree
@@ -55,16 +61,21 @@ func main() {
 		return
 	}
 
-	agent := CreateNpcAgent("HostileNPC", projectConfig)
-	for i := 0; i < 30; i++ {
-		log.Println("i: ", i)
-		agent.Tick()
-		agent.hp -= 4
-		if agent.nearestHostileDistance > 0 {
-			agent.nearestHostileDistance -= 5
-			if agent.nearestHostileDistance < 0 {
-				agent.nearestHostileDistance = 0
-			}
-		}
+	// agent := CreateNpcAgent("HostileNPC", projectConfig)
+	// for i := 0; i < 30; i++ {
+	// 	log.Println("i: ", i)
+	// 	agent.Tick()
+	// 	agent.hp -= 4
+	// 	if agent.nearestHostileDistance > 0 {
+	// 		agent.nearestHostileDistance -= 5
+	// 		if agent.nearestHostileDistance < 0 {
+	// 			agent.nearestHostileDistance = 0
+	// 		}
+	// 	}
+	// }
+
+	agent2 := CreateNpcAgent("TestTree", projectConfig)
+	for i := 0; i < 15; i++ {
+		agent2.Tick()
 	}
 }

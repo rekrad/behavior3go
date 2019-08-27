@@ -4,7 +4,7 @@
   "data": {
     "version": "0.3.0",
     "scope": "project",
-    "selectedTree": "99880cd3-c226-4dd5-84af-fa7792ce3326",
+    "selectedTree": "0b74e9bd-9b6d-4b4c-b23a-e91a135d1cfa",
     "trees": [
       {
         "version": "0.3.0",
@@ -37,18 +37,6 @@
             "display": {
               "x": 204,
               "y": 72
-            }
-          },
-          "1d84d397-8f18-42b1-8e9b-a96f4dc6ae95": {
-            "id": "1d84d397-8f18-42b1-8e9b-a96f4dc6ae95",
-            "name": "Melee",
-            "category": "action",
-            "title": "Melee",
-            "description": "",
-            "properties": {},
-            "display": {
-              "x": 240,
-              "y": 732
             }
           },
           "7e85fd69-9d01-4768-884b-e92c92f04cfc": {
@@ -216,7 +204,7 @@
             },
             "children": [
               "afdd24d2-6cfe-4727-aab2-6068de6f5976",
-              "1d84d397-8f18-42b1-8e9b-a96f4dc6ae95"
+              "f1c2ccc6-fffd-4890-8d21-a67130c02b63"
             ]
           },
           "65a2dab6-45df-436d-8d11-7feafa955425": {
@@ -338,11 +326,154 @@
               "1ffac7f3-a500-4149-8569-a976a7139a13",
               "b721da38-22ea-44e0-adab-d846ff7e3bac"
             ]
+          },
+          "34a5e6f6-7246-4397-89af-f6c4cb15587c": {
+            "id": "34a5e6f6-7246-4397-89af-f6c4cb15587c",
+            "name": "MeleeAttack1",
+            "category": "action",
+            "title": "MeleeAttack1",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 504,
+              "y": 696
+            }
+          },
+          "82b3e5c7-3a1c-4162-b1ed-cf0a968f0d2c": {
+            "id": "82b3e5c7-3a1c-4162-b1ed-cf0a968f0d2c",
+            "name": "MeleeAttack2",
+            "category": "action",
+            "title": "MeleeAttack2",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 720,
+              "y": 864
+            }
+          },
+          "ce7c0d7b-715e-470d-8b9c-73d274e320fa": {
+            "id": "ce7c0d7b-715e-470d-8b9c-73d274e320fa",
+            "name": "MeleeAttack3",
+            "category": "action",
+            "title": "MeleeAttack3",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 720,
+              "y": 1008
+            }
+          },
+          "b883cae8-855f-4ac7-8a4c-3e154666720a": {
+            "id": "b883cae8-855f-4ac7-8a4c-3e154666720a",
+            "name": "Wait",
+            "category": "action",
+            "title": "Wait <milliseconds>ms",
+            "description": "",
+            "properties": {
+              "milliseconds": 500
+            },
+            "display": {
+              "x": 720,
+              "y": 804
+            }
+          },
+          "5e950589-faf3-4b8e-81c9-4e518187f71a": {
+            "id": "5e950589-faf3-4b8e-81c9-4e518187f71a",
+            "name": "Wait",
+            "category": "action",
+            "title": "Wait <milliseconds>ms",
+            "description": "",
+            "properties": {
+              "milliseconds": 400
+            },
+            "display": {
+              "x": 720,
+              "y": 948
+            }
+          },
+          "9e1257b0-bed7-4e68-8cee-e412f24d5bb8": {
+            "id": "9e1257b0-bed7-4e68-8cee-e412f24d5bb8",
+            "name": "MaxTime",
+            "category": "decorator",
+            "title": "Max <maxTime>ms",
+            "description": "",
+            "properties": {
+              "maxTime": 1000
+            },
+            "display": {
+              "x": 384,
+              "y": 828
+            },
+            "child": "d4a75047-5da6-4196-84d0-4d2758d24655"
+          },
+          "f1c2ccc6-fffd-4890-8d21-a67130c02b63": {
+            "id": "f1c2ccc6-fffd-4890-8d21-a67130c02b63",
+            "name": "MemSequence",
+            "category": "composite",
+            "title": "MemSequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 180,
+              "y": 816
+            },
+            "children": [
+              "34a5e6f6-7246-4397-89af-f6c4cb15587c",
+              "9e1257b0-bed7-4e68-8cee-e412f24d5bb8",
+              "5bfe55d3-41fe-47e9-832c-205670929a75"
+            ]
+          },
+          "d4a75047-5da6-4196-84d0-4d2758d24655": {
+            "id": "d4a75047-5da6-4196-84d0-4d2758d24655",
+            "name": "MemSequence",
+            "category": "composite",
+            "title": "MemSequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 540,
+              "y": 828
+            },
+            "children": [
+              "b883cae8-855f-4ac7-8a4c-3e154666720a",
+              "82b3e5c7-3a1c-4162-b1ed-cf0a968f0d2c"
+            ]
+          },
+          "5bfe55d3-41fe-47e9-832c-205670929a75": {
+            "id": "5bfe55d3-41fe-47e9-832c-205670929a75",
+            "name": "MaxTime",
+            "category": "decorator",
+            "title": "Max <maxTime>ms",
+            "description": "",
+            "properties": {
+              "maxTime": 900
+            },
+            "display": {
+              "x": 384,
+              "y": 972
+            },
+            "child": "4a51d089-0e07-4230-a0f4-5f800eea13e0"
+          },
+          "4a51d089-0e07-4230-a0f4-5f800eea13e0": {
+            "id": "4a51d089-0e07-4230-a0f4-5f800eea13e0",
+            "name": "MemSequence",
+            "category": "composite",
+            "title": "MemSequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 540,
+              "y": 972
+            },
+            "children": [
+              "5e950589-faf3-4b8e-81c9-4e518187f71a",
+              "ce7c0d7b-715e-470d-8b9c-73d274e320fa"
+            ]
           }
         },
         "display": {
-          "camera_x": 782.1850000023842,
-          "camera_y": 253.91999998688698,
+          "camera_x": 611.1850000023842,
+          "camera_y": 222.91999998688698,
           "camera_z": 0.75,
           "x": -456,
           "y": 36
@@ -363,6 +494,94 @@
           "camera_z": 1,
           "x": -240,
           "y": -48
+        }
+      },
+      {
+        "version": "0.3.0",
+        "scope": "tree",
+        "id": "0b74e9bd-9b6d-4b4c-b23a-e91a135d1cfa",
+        "title": "TestTree",
+        "description": "",
+        "root": "0984c5e4-f05d-4a31-af9b-8769b55248b6",
+        "properties": {},
+        "nodes": {
+          "9b7dec9f-5344-44c7-84d6-bcc1cd336582": {
+            "id": "9b7dec9f-5344-44c7-84d6-bcc1cd336582",
+            "name": "MemSequence",
+            "category": "composite",
+            "title": "MemSequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 168,
+              "y": 48
+            },
+            "children": [
+              "ba5490e2-2e64-421b-9b80-04c7058c4cb3",
+              "7d30d872-fbee-4904-abf7-9d3bd0685966"
+            ]
+          },
+          "ba5490e2-2e64-421b-9b80-04c7058c4cb3": {
+            "id": "ba5490e2-2e64-421b-9b80-04c7058c4cb3",
+            "name": "DebugLog",
+            "category": "action",
+            "title": "DebugLog",
+            "description": "",
+            "properties": {
+              "info": "DDDDDDDDDDDDDDDDDDD"
+            },
+            "display": {
+              "x": 384,
+              "y": -24
+            }
+          },
+          "9ee6a4cd-a712-4a78-8236-9d5870b139ea": {
+            "id": "9ee6a4cd-a712-4a78-8236-9d5870b139ea",
+            "name": "TestRunner1",
+            "category": "action",
+            "title": "TestRunner1",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 288,
+              "y": -192
+            }
+          },
+          "7d30d872-fbee-4904-abf7-9d3bd0685966": {
+            "id": "7d30d872-fbee-4904-abf7-9d3bd0685966",
+            "name": "TestRunner2",
+            "category": "action",
+            "title": "TestRunner2",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 384,
+              "y": 108
+            }
+          },
+          "0984c5e4-f05d-4a31-af9b-8769b55248b6": {
+            "id": "0984c5e4-f05d-4a31-af9b-8769b55248b6",
+            "name": "Priority",
+            "category": "composite",
+            "title": "Priority",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": -12,
+              "y": -24
+            },
+            "children": [
+              "9ee6a4cd-a712-4a78-8236-9d5870b139ea",
+              "9b7dec9f-5344-44c7-84d6-bcc1cd336582"
+            ]
+          }
+        },
+        "display": {
+          "camera_x": 691,
+          "camera_y": 544,
+          "camera_z": 1,
+          "x": -180,
+          "y": -24
         }
       }
     ],
@@ -510,6 +729,51 @@
         "name": "LowHp",
         "category": "action",
         "title": "LowHp",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "MeleeAttack1",
+        "category": "action",
+        "title": "MeleeAttack1",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "MeleeAttack2",
+        "category": "action",
+        "title": "MeleeAttack2",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "MeleeAttack3",
+        "category": "action",
+        "title": "MeleeAttack3",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "TestRunner1",
+        "category": "action",
+        "title": "TestRunner1",
+        "description": null,
+        "properties": {}
+      },
+      {
+        "version": "0.3.0",
+        "scope": "node",
+        "name": "TestRunner2",
+        "category": "action",
+        "title": "TestRunner2",
         "description": null,
         "properties": {}
       }

@@ -234,3 +234,60 @@ func  (this *LowHp) OnTick(tick *Tick) b3.Status {
 	}
 	return b3.FAILURE
 }
+
+type MeleeAttack1 struct {
+	AgentAction
+}
+
+func (this *MeleeAttack1) OnTick(tick *Tick) b3.Status {
+	return b3.SUCCESS
+}
+
+type MeleeAttack2 struct {
+	AgentAction
+}
+
+func (this *MeleeAttack2) OnTick(tick *Tick) b3.Status {
+	return b3.SUCCESS
+}
+
+type MeleeAttack3 struct {
+	AgentAction
+}
+
+func (this *MeleeAttack3) OnTick(tick *Tick) b3.Status {
+	return b3.SUCCESS
+}
+
+type TestRunner1 struct {
+	AgentAction
+	i int
+}
+
+func (this *TestRunner1) OnTick(tick *Tick) b3.Status {
+	this.i++
+	if this.i == 1 {
+		log.Println("i == 1 return b3.SUCCESS")
+		return b3.SUCCESS
+	} else if this.i == 2 {
+		log.Println("i == 2 return b3.FAILURE")
+		return b3.FAILURE
+	} else if this.i == 3 {
+		log.Println("i == 3 return b3.FAILURE")
+		return b3.FAILURE
+	} else if this.i == 7 {
+		log.Println("i == 7 return b3.FAILURE")
+		return b3.FAILURE
+	} 
+	log.Printf("i == %v return b3.SUCCESS\n", this.i)
+	return b3.SUCCESS
+}
+
+type TestRunner2 struct {
+	AgentAction
+}
+
+func (this *TestRunner2) OnTick(tick *Tick) b3.Status {
+	log.Println("TestRunner2.OnTick")
+	return b3.RUNNING
+}
