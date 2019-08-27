@@ -4,7 +4,7 @@
   "data": {
     "version": "0.3.0",
     "scope": "project",
-    "selectedTree": "0b74e9bd-9b6d-4b4c-b23a-e91a135d1cfa",
+    "selectedTree": "99880cd3-c226-4dd5-84af-fa7792ce3326",
     "trees": [
       {
         "version": "0.3.0",
@@ -97,7 +97,9 @@
             "category": "action",
             "title": "HostileCanBeSeen",
             "description": "",
-            "properties": {},
+            "properties": {
+              "RemoteAttackDistance": ""
+            },
             "display": {
               "x": 204,
               "y": 144
@@ -293,6 +295,7 @@
               "y": -276
             },
             "children": [
+              "61f87295-221b-4ef4-8f71-0645a59480df",
               "e735ed32-492e-4d39-88c2-9e4560f3ed0b",
               "3a9db577-6860-42a3-8761-0f0129d0898f"
             ]
@@ -469,11 +472,23 @@
               "5e950589-faf3-4b8e-81c9-4e518187f71a",
               "ce7c0d7b-715e-470d-8b9c-73d274e320fa"
             ]
+          },
+          "61f87295-221b-4ef4-8f71-0645a59480df": {
+            "id": "61f87295-221b-4ef4-8f71-0645a59480df",
+            "name": "TestCondition",
+            "category": "condition",
+            "title": "TestCondition",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 216,
+              "y": -492
+            }
           }
         },
         "display": {
-          "camera_x": 611.1850000023842,
-          "camera_y": 222.91999998688698,
+          "camera_x": 749.1850000023842,
+          "camera_y": 472.919999986887,
           "camera_z": 0.75,
           "x": -456,
           "y": 36
