@@ -291,3 +291,44 @@ func (this *TestRunner2) OnTick(tick *Tick) b3.Status {
 	log.Println("TestRunner2.OnTick")
 	return b3.RUNNING
 }
+
+type HitA struct {
+	AgentAction
+}
+
+func (this *HitA) OnTick(tick *Tick) b3.Status {
+	this.AgentAction.OnTick(tick)
+	log.Println("HitA");
+	return b3.SUCCESS
+}
+
+
+type HitB struct {
+	AgentAction
+}
+
+func (this *HitB) OnTick(tick *Tick) b3.Status {
+	this.AgentAction.OnTick(tick)
+	log.Println("HitB");
+	return b3.SUCCESS
+}
+
+type HitC struct {
+	AgentAction
+}
+
+func (this *HitC) OnTick(tick *Tick) b3.Status {
+	this.AgentAction.OnTick(tick)
+	log.Println("HitC");
+	return b3.SUCCESS
+}
+
+type HitD struct {
+	AgentAction
+}
+
+func (this *HitD) OnTick(tick *Tick) b3.Status {
+	this.AgentAction.OnTick(tick)
+	log.Println("HitD");
+	return b3.SUCCESS
+}

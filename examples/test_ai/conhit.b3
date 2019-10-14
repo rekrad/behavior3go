@@ -1,0 +1,257 @@
+{
+  "version": "0.3.0",
+  "scope": "tree",
+  "id": "0b66f31c-a01d-4296-8d96-bd4cbe66274c",
+  "title": "ConHitTree",
+  "description": "",
+  "root": "17b43c48-fb1c-4954-8d19-041f04f117fc",
+  "properties": {},
+  "nodes": {
+    "317853b7-5830-43d0-947f-db6cdc16d235": {
+      "id": "317853b7-5830-43d0-947f-db6cdc16d235",
+      "name": "HitA",
+      "category": "action",
+      "title": "HitA",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 372,
+        "y": -216
+      }
+    },
+    "05375861-d0c8-4eb0-8bef-ed1d017d5abf": {
+      "id": "05375861-d0c8-4eb0-8bef-ed1d017d5abf",
+      "name": "HitB",
+      "category": "action",
+      "title": "HitB",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 552,
+        "y": -12
+      }
+    },
+    "85d6a162-ee3b-4ebb-af7a-8c4cc3459ad2": {
+      "id": "85d6a162-ee3b-4ebb-af7a-8c4cc3459ad2",
+      "name": "HitC",
+      "category": "action",
+      "title": "HitC",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 564,
+        "y": 120
+      }
+    },
+    "1d08c3e4-6ef6-45f0-86e5-3cf9f4d08a73": {
+      "id": "1d08c3e4-6ef6-45f0-86e5-3cf9f4d08a73",
+      "name": "HitD",
+      "category": "action",
+      "title": "HitD",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 540,
+        "y": 252
+      }
+    },
+    "17b43c48-fb1c-4954-8d19-041f04f117fc": {
+      "id": "17b43c48-fb1c-4954-8d19-041f04f117fc",
+      "name": "MemSequence",
+      "category": "composite",
+      "title": "MemSequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 24,
+        "y": -24
+      },
+      "children": [
+        "317853b7-5830-43d0-947f-db6cdc16d235",
+        "a8bdb35d-285c-4cf9-9a13-0e595b0707c5",
+        "b790e636-49cb-4242-848d-74ee8dd1db74",
+        "82ecc170-195d-4794-86e5-8bbe2b10b003"
+      ]
+    },
+    "a8bdb35d-285c-4cf9-9a13-0e595b0707c5": {
+      "id": "a8bdb35d-285c-4cf9-9a13-0e595b0707c5",
+      "name": "MaxTime",
+      "category": "decorator",
+      "title": "Max <maxTime>ms",
+      "description": "",
+      "properties": {
+        "maxTime": 500
+      },
+      "display": {
+        "x": 168,
+        "y": -24
+      },
+      "child": "ee4df452-342c-411e-856f-4975ca425e33"
+    },
+    "b790e636-49cb-4242-848d-74ee8dd1db74": {
+      "id": "b790e636-49cb-4242-848d-74ee8dd1db74",
+      "name": "MaxTime",
+      "category": "decorator",
+      "title": "Max <maxTime>ms",
+      "description": "",
+      "properties": {
+        "maxTime": 500
+      },
+      "display": {
+        "x": 180,
+        "y": 96
+      },
+      "child": "77a2e8ee-30a3-49bf-8c27-d792f3a35bb4"
+    },
+    "82ecc170-195d-4794-86e5-8bbe2b10b003": {
+      "id": "82ecc170-195d-4794-86e5-8bbe2b10b003",
+      "name": "MaxTime",
+      "category": "decorator",
+      "title": "Max <maxTime>ms",
+      "description": "",
+      "properties": {
+        "maxTime": 800
+      },
+      "display": {
+        "x": 192,
+        "y": 216
+      },
+      "child": "0ff03f3a-6f9e-4333-8801-8ae0900ce53b"
+    },
+    "ee4df452-342c-411e-856f-4975ca425e33": {
+      "id": "ee4df452-342c-411e-856f-4975ca425e33",
+      "name": "MemSequence",
+      "category": "composite",
+      "title": "MemSequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 372,
+        "y": -24
+      },
+      "children": [
+        "7fa248c4-15bf-409c-a516-764db0073cfa",
+        "05375861-d0c8-4eb0-8bef-ed1d017d5abf"
+      ]
+    },
+    "7fa248c4-15bf-409c-a516-764db0073cfa": {
+      "id": "7fa248c4-15bf-409c-a516-764db0073cfa",
+      "name": "Wait",
+      "category": "action",
+      "title": "Wait <milliseconds>ms",
+      "description": "",
+      "properties": {
+        "milliseconds": 200
+      },
+      "display": {
+        "x": 576,
+        "y": -84
+      }
+    },
+    "eba27181-6f6d-4f49-b6f7-1b72f2b6aed8": {
+      "id": "eba27181-6f6d-4f49-b6f7-1b72f2b6aed8",
+      "name": "Wait",
+      "category": "action",
+      "title": "Wait <milliseconds>ms",
+      "description": "",
+      "properties": {
+        "milliseconds": 200
+      },
+      "display": {
+        "x": 552,
+        "y": 60
+      }
+    },
+    "77a2e8ee-30a3-49bf-8c27-d792f3a35bb4": {
+      "id": "77a2e8ee-30a3-49bf-8c27-d792f3a35bb4",
+      "name": "MemSequence",
+      "category": "composite",
+      "title": "MemSequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 360,
+        "y": 96
+      },
+      "children": [
+        "eba27181-6f6d-4f49-b6f7-1b72f2b6aed8",
+        "85d6a162-ee3b-4ebb-af7a-8c4cc3459ad2"
+      ]
+    },
+    "0ff03f3a-6f9e-4333-8801-8ae0900ce53b": {
+      "id": "0ff03f3a-6f9e-4333-8801-8ae0900ce53b",
+      "name": "MemSequence",
+      "category": "composite",
+      "title": "MemSequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 360,
+        "y": 216
+      },
+      "children": [
+        "eb79a335-ea59-4a5c-ae96-73f7a9adee5c",
+        "1d08c3e4-6ef6-45f0-86e5-3cf9f4d08a73"
+      ]
+    },
+    "eb79a335-ea59-4a5c-ae96-73f7a9adee5c": {
+      "id": "eb79a335-ea59-4a5c-ae96-73f7a9adee5c",
+      "name": "Wait",
+      "category": "action",
+      "title": "Wait <milliseconds>ms",
+      "description": "",
+      "properties": {
+        "milliseconds": 200
+      },
+      "display": {
+        "x": 552,
+        "y": 192
+      }
+    }
+  },
+  "display": {
+    "camera_x": 293,
+    "camera_y": 434,
+    "camera_z": 1,
+    "x": -108,
+    "y": -24
+  },
+  "custom_nodes": [
+    {
+      "version": "0.3.0",
+      "scope": "node",
+      "name": "HitA",
+      "category": "action",
+      "title": "HitA",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.3.0",
+      "scope": "node",
+      "name": "HitB",
+      "category": "action",
+      "title": "HitB",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.3.0",
+      "scope": "node",
+      "name": "HitC",
+      "category": "action",
+      "title": "HitC",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.3.0",
+      "scope": "node",
+      "name": "HitD",
+      "category": "action",
+      "title": "HitD",
+      "description": null,
+      "properties": {}
+    }
+  ]
+}

@@ -8,15 +8,10 @@ import (
 	// . "github.com/rekrad/behavior3go/examples/share"
 	. "github.com/rekrad/behavior3go/loader"
 	"log"
+	"time"
 )
 
-// 根据行为树名称创建一个agent
-func CreateNpcAgent(btName string, projectConfig *RawProjectCfg) *agent {
-	agent := &agent{ blackboard: NewBlackboard()}
-	agent.nearestHostileDistance = 115
-	agent.hp = 100
-	
-	// 注册自定义节点类型 
+func registerTestNode() *b3.RegisterStructMaps {
 	maps := b3.NewRegisterStructMaps()
 	maps.Register("Patrol", &patrol{})
 	maps.Register("Alert", &alert{})
@@ -38,8 +33,26 @@ func CreateNpcAgent(btName string, projectConfig *RawProjectCfg) *agent {
 	maps.Register("TestRunner1", &TestRunner1{})
 	maps.Register("TestRunner2", &TestRunner2{})
 	maps.Register("TestCondition", &TestCondition{})
-	
+	maps.Register("HitA", &HitA{})
+	maps.Register("HitB", &HitB{})
+	maps.Register("HitC", &HitC{})
+	maps.Register("HitD", &HitD{})
 
+	return maps
+}
+
+func createAgent(btree *BehaviorTree) *agent {
+	agent := &agent{ 
+		blackboard: NewBlackboard(),
+		bTree: btree,
+	}
+	return agent
+}
+
+// 根据行为树名称创建一个agent
+func CreateAgentFromProjectCfg(btName string, projectConfig *RawProjectCfg) *agent {
+	// 注册自定义节点类型 
+	maps := registerTestNode()
 	// 根据树名加载行为树
 	var bTree *BehaviorTree
 	for _, v := range projectConfig.Data.Trees {
@@ -49,21 +62,21 @@ func CreateNpcAgent(btName string, projectConfig *RawProjectCfg) *agent {
 			break
 		}
 	}
-
-	// 设置agen的行为树
-	agent.bTree = bTree
+	// 创建agent
+	agent := createAgent(bTree)
+	agent.nearestHostileDistance = 115
+	agent.hp = 100
 
 	return agent
 }
 
-func main() {
-	projectConfig, ok := LoadRawProjectCfg("test_ai.b3")
+func TestProjectCfgTree(projectCfg string, treename string) {
+	projectConfig, ok := LoadRawProjectCfg(projectCfg)
 	if !ok {
 		fmt.Println("LoadRawProjectCfg err")
 		return
 	}
-
-	agent := CreateNpcAgent("HostileNPC", projectConfig)
+	agent := CreateAgentFromProjectCfg(treename, projectConfig)
 	for i := 0; i < 30; i++ {
 		log.Println("i: ", i)
 		agent.Tick()
@@ -75,9 +88,29 @@ func main() {
 			}
 		}
 	}
+}
 
-	// agent2 := CreateNpcAgent("TestTree", projectConfig)
-	// for i := 0; i < 15; i++ {
-	// 	agent2.Tick()
-	// }
+func TestTreeCfg(treecfg string) {
+	treeConfig, ok := LoadTreeCfg(treecfg)
+	if !ok {
+		fmt.Println("LoadTreeCfg err")
+		return
+	}
+	//自定义节点注册
+	maps := registerTestNode()
+	//载入
+	btree := CreateBevTreeFromConfig(treeConfig, maps)
+	btree.Print()
+	agent := createAgent(btree)
+	
+	//每隔100ms循环一帧
+	for i := 0; i < 1000; i++ {
+		time.Sleep(time.Millisecond * 100)
+		agent.Tick()
+	}
+}
+
+func main() {
+	TestProjectCfgTree("test_ai.b3", "HostileNPC")
+	TestTreeCfg("conhit.b3")
 }
