@@ -12,6 +12,12 @@ import (
 	. "github.com/rekrad/behavior3go/decorators"
 )
 
+var globalBaseMap *b3.RegisterStructMaps
+
+func init() {
+	globalBaseMap = createBaseStructMaps()
+}
+
 func createBaseStructMaps() *b3.RegisterStructMaps {
 	st := b3.NewRegisterStructMaps()
 	//actions
@@ -41,5 +47,12 @@ func CreateBevTreeFromConfig(config *BTTreeCfg, extMap *b3.RegisterStructMaps) *
 	baseMaps := createBaseStructMaps()
 	tree := NewBeTree()
 	tree.Load(config, baseMaps, extMap)
+	return tree
+}
+
+// 这个方法不再每次都进行createBaseStructMaps的操作
+func CreateBevTreeFromConfigEx(config *BTTreeCfg, extMap *b3.RegisterStructMaps) *BehaviorTree {
+	tree := NewBeTree()
+	tree.Load(config, globalBaseMap, extMap)
 	return tree
 }

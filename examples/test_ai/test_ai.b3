@@ -240,6 +240,7 @@
               "y": 36
             },
             "children": [
+              "f26eda9d-e6dc-4da5-8a73-29fcb29a20fa",
               "8d8914fa-7ffe-4253-851a-b43055cda227",
               "65a2dab6-45df-436d-8d11-7feafa955425"
             ]
@@ -484,12 +485,24 @@
               "x": 216,
               "y": -492
             }
+          },
+          "f26eda9d-e6dc-4da5-8a73-29fcb29a20fa": {
+            "id": "f26eda9d-e6dc-4da5-8a73-29fcb29a20fa",
+            "name": "Succeeder",
+            "category": "action",
+            "title": "Succeeder",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": -48,
+              "y": -552
+            }
           }
         },
         "display": {
-          "camera_x": 688.1850000023842,
-          "camera_y": 476.919999986887,
-          "camera_z": 0.75,
+          "camera_x": 468.1850000023842,
+          "camera_y": 364.919999986887,
+          "camera_z": 0.5,
           "x": -456,
           "y": 36
         }
